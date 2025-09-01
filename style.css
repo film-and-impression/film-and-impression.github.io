@@ -126,7 +126,7 @@ a:hover {
 }
 
 .photo-detail img {
-  
+  max-width: 900px;
   height: auto;
   width: auto;
   max-height: 1000px;
