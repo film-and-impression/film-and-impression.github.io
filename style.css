@@ -1,0 +1,132 @@
+/* Set the background color for the entire page */
+body {
+    background-color: #ffffff; 
+    margin: 50px;  /* removes default margin */
+    padding: 0; /* removes default padding */
+    font-family: Arial, Helvetica, sans-serif; /* default font for the page */
+}
+
+/* Style for headings */
+h1 {
+    color: #000000;      
+    font-size: 36px;     /* size of heading */
+    text-align: center;  /* centers text */
+}
+
+/* Style for paragraphs */
+p {
+    color: #000000;      
+    font-size: 20px;     /* paragraph size */
+    line-height: 1.5;    /* spacing between lines */
+}
+
+/* Style all links */
+a {
+    font-size: 20px;
+    line-height: 1.5; 
+    color: #0066cc;       /* blue link */
+    text-decoration: none; /* removes underline */
+    
+}
+
+/* Style links on hover */
+/*
+a:hover {
+    color: #004499;      
+    text-decoration: underline;
+}
+*/
+
+
+
+
+.toc-block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 300px;                /* fixed height for block */
+  background-size: cover;       /* scale image to fill block */
+  background-position: center;  /* center the image */
+  border-radius: 0;
+  text-decoration: none;        /* remove underline */
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.toc {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* exactly 2 equal columns */
+  gap: 20px;  /* space between blocks */
+  padding: 20px;
+}
+
+/* Semi-transparent overlay */
+.toc-block::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* black overlay at 50% opacity */
+  z-index: 1;
+}
+
+/* Keep the text above the overlay */
+.toc-block span {
+  position: relative;
+  z-index: 2;
+}
+
+/* Hover effect → scale block slightly */
+.toc-block:hover {
+  transform: scale(1.05);  /* grow by 5% */
+}
+
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+
+  max-width: 90%;   /* set a max width for the whole grid */
+  margin: 0 auto;      /* center horizontally */
+  padding: 20px;       /* optional spacing inside */
+}
+
+.photo-thumb {
+  display: flex;
+  justify-content: center; /* center image if narrower */
+  align-items: center;
+  overflow: hidden;
+}
+
+
+.photo-thumb img {
+  width: auto;
+  max-height: 600px;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.photo-thumb:hover img {
+  transform: scale(1.05);
+}
+
+.photo-detail {
+  display: grid;
+  grid-template-columns: 2fr 1fr; /* photo on left, text on right */
+  gap: 20px;
+  align-items: start;
+}
+
+.photo-detail img {
+  width: 100%;
+  height: auto;
+  width: auto;
+  max-height: 1000px;
+}
