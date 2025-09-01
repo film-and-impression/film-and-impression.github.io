@@ -122,10 +122,11 @@ a:hover {
   grid-template-columns: 2fr 1fr; /* photo on left, text on right */
   gap: 20px;
   align-items: start;
+  max-width: 100%;
 }
 
 .photo-detail img {
-  max-width: 600px;
+  
   height: auto;
   width: auto;
   max-height: 1000px;
