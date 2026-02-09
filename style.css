@@ -2,15 +2,15 @@
 body {
     background-color: #ffffff; 
     /* margin: 100px;   */
-    padding: clamp(12px, 30vw, 100px);
+    padding: clamp(12px, 4vw, 100px);
     font-family: Arial, Helvetica, sans-serif; /* default font for the page */
 }
 
 /* Style for headings */
 h1 {
     color: #000000;      
-    font-size: 36px;
-    /* font-size: clamp(1.8rem, 4vw, 3rem); */
+    /* font-size: 36px; */
+    font-size: clamp(1.8rem, 4vw, 3rem);
     text-align: center;  /* centers text */
 }
 
