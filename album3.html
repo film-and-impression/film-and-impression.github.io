@@ -36,10 +36,12 @@
                 <img src="photos/img_3.JPG" data-full="photos/img_3.JPG" alt="">
             </a> -->
             <div class="thumb">
-                <img src="photos/img_3_thumb.jpg" data-full="photos/img_3_display.jpg" alt="">
+                <img src="photos/img_3_thumb.jpg" data-full="photos/img_3_display.jpg" 
+                data-caption="Nordhavn, Copenhagen" alt="">
             </div>
             <div class="thumb">
-                <img src="photos/img_5_thumb.jpg" data-full="photos/img_5_display.jpg" alt="">
+                <img src="photos/img_5_thumb.jpg" data-full="photos/img_5_display.jpg" 
+                data-caption="Palamidi Fortress, Nafplion" alt="">
             </div>
             <div class="thumb">
                 <img src="photos/img_2_thumb.jpg" data-full="photos/img_2_display.jpg" alt="">
@@ -52,9 +54,20 @@
             </div>
         </div>
 
-        <div id="lightbox">
+        <!-- <div id="lightbox">
+            <span class="close">&times;</span>
             <img id="lightbox-img" src="">
+            <div id="lightbox-caption"></div>
+        </div> -->
+
+        <div id="lightbox">
+        <span class="close">&times;</span>
+        <div class="lightbox-content">
+            <img id="lightbox-img">
+            <div id="lightbox-caption"></div>
         </div>
+        </div>
+
     </main>
     <footer>
         <p>&copy; 2025 Film & Impression</p>
@@ -62,8 +75,11 @@
 
     <script>
         console.log("Lightbox script loaded");
+    const thumbnails = document.querySelectorAll('.gallery img');
     const lightbox = document.getElementById("lightbox");
     const lightboxImg = document.getElementById("lightbox-img");
+    const lightboxCaption = document.getElementById('lightbox-caption');
+
 
     document.querySelectorAll(".thumb img").forEach(img => {
         img.addEventListener("click", () => {
@@ -72,6 +88,22 @@
         document.body.style.overflow = "hidden";
         });
     });
+
+    // function openLightbox(src, text) {
+    // img.onload = () => {
+    //     content.classList.remove("portrait", "landscape");
+
+    //     if (img.naturalHeight > img.naturalWidth) {
+    //     content.classList.add("portrait");
+    //     } else {
+    //     content.classList.add("landscape");
+    //     }
+    // };
+
+    // img.src = src;
+    // caption.textContent = text;
+    // lightbox.style.display = "flex";
+    // }
 
     function closeLightbox() {
         lightbox.style.display = "none";
@@ -85,6 +117,14 @@
         if (e.key === "Escape") {
         closeLightbox();
         }
+    });
+
+    thumbnails.forEach(img => {
+    img.addEventListener('click', () => {
+        lightboxImg.src = img.dataset.full;
+        lightboxCaption.textContent = img.dataset.caption || '';
+        lightbox.style.display = 'flex';
+    });
     });
     </script>
 </body>

@@ -168,10 +168,16 @@ a:hover {
   position: fixed;
   inset: 0;
   background: rgba(0, 0, 0, 0.92);
-  display: none;
+  display: none; 
+  /* flex-direction: column;  */
   align-items: center;
   justify-content: center;
   z-index: 1000;
+}
+
+.lightbox-content {
+  max-width: 90vw;
+  display: block;
 }
 
 #lightbox img {
@@ -179,3 +185,41 @@ a:hover {
   max-height: 90vh;
   object-fit: contain;
 }
+
+#lightbox-caption {
+  margin-top: 12px;
+  color: #ddd;
+  font-size: 1.25rem;
+  text-align: left;
+  max-width: 90vw;
+  line-height: 1.4;
+  /* font-style: italic; */
+}
+
+/* LANDSCAPE: caption below */
+/* .lightbox-content.landscape {
+  display: block;
+}
+
+.lightbox-content.landscape #lightbox-caption {
+  margin-top: 14px;
+  text-align: left;
+}
+
+
+.lightbox-content.portrait {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.lightbox-content.portrait #lightbox-img {
+  max-height: 90vh;
+}
+
+.lightbox-content.portrait #lightbox-caption {
+  max-width: 240px;
+  text-align: left;
+  font-size: 0.9rem;
+  line-height: 1.4;
+} */
