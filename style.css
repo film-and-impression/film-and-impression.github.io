@@ -1,7 +1,7 @@
 /* Set the background color for the entire page */
 body {
     background-color: #ffffff; 
-    margin: 50px;  /* removes default margin */
+    margin: 150px;  /* removes default margin */
     padding: 0; /* removes default padding */
     font-family: Arial, Helvetica, sans-serif; /* default font for the page */
 }
@@ -36,7 +36,6 @@ a:hover {
     text-decoration: underline;
 }
 */
-
 
 
 
@@ -87,13 +86,15 @@ a:hover {
 
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  /* grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); */
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 
-  max-width: 90%;   /* set a max width for the whole grid */
-  margin: 0 auto;      /* center horizontally */
-  padding: 20px;       /* optional spacing inside */
+  max-width: 90%;   
+  margin: 0 auto;      
+  padding: 20px;      
 }
+
 
 .photo-thumb {
   display: flex;
@@ -130,4 +131,51 @@ a:hover {
   height: auto;
   width: auto;
   max-height: 1000px;
+}
+
+/* .gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+} */
+
+.thumb {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1/1;      /* fixed square container */
+  background: #f0f0f0;    /* visible padding color (optional) */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 0px;
+}
+
+.thumb img {
+  max-width: 90%;
+  max-height: 90%;
+  height: 100%;
+  object-fit: contain;    
+  display: inline-block;
+}
+
+.thumb:hover img {
+  transform: scale(1.05);
+}
+
+
+#lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.92);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+#lightbox img {
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
 }
