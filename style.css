@@ -1,7 +1,7 @@
 /* Set the background color for the entire page */
 body {
     background-color: #ffffff; 
-    margin: 150px;  /* removes default margin */
+    margin: 100px;  /* removes default margin */
     padding: 0; /* removes default padding */
     font-family: Arial, Helvetica, sans-serif; /* default font for the page */
 }
@@ -9,8 +9,13 @@ body {
 /* Style for headings */
 h1 {
     color: #000000;      
-    font-size: 36px;     /* size of heading */
+    font-size: 36px;
+    /* font-size: clamp(1.8rem, 4vw, 3rem); */
     text-align: center;  /* centers text */
+}
+
+h2 {
+  font-size: clamp(1.4rem, 3vw, 2rem);
 }
 
 /* Style for paragraphs */
@@ -87,7 +92,8 @@ a:hover {
 .gallery {
   display: grid;
   /* grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); */
-  grid-template-columns: repeat(3, 1fr);
+  /* grid-template-columns: repeat(3, 1fr); */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
 
   max-width: 90%;   
