@@ -1,8 +1,8 @@
 /* Set the background color for the entire page */
 body {
     background-color: #ffffff; 
-    margin: 100px;  /* removes default margin */
-    padding: 0; /* removes default padding */
+    /* margin: 100px;   */
+    padding: clamp(12px, 30vw, 100px);
     font-family: Arial, Helvetica, sans-serif; /* default font for the page */
 }
 
