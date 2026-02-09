@@ -196,6 +196,18 @@ a:hover {
   /* font-style: italic; */
 }
 
+@media (max-width: 768px) {
+  .lightbox-content {
+    display: block !important;
+  }
+
+  #lightbox-caption {
+    margin-top: 12px;
+    max-width: 100%;
+    text-align: left;
+  }
+}
+
 /* LANDSCAPE: caption below */
 /* .lightbox-content.landscape {
   display: block;
