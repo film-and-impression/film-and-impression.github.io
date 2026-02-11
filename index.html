@@ -22,7 +22,7 @@
     </main>
     -->
     
-    <div class="toc">
+    <!-- <div class="toc">
         <a href="album1.html" class="toc-block" style="background-image: url('photos/img_1.JPG');">
             <span class="toc-text">Album1</span>
         </a>
@@ -34,11 +34,96 @@
         <a href="album3.html" class="toc-block" style="background-image: url('photos/img_3.JPG');">
             <span class="toc-text">Album3</span>
         </a>
-    </div>
+    </div> -->
     
 
+    <main>
+        <div class="gallery-wrapper">
+        <div class="gallery">
+            <div class="thumb">
+                <img src="photos/img_10_thumb.jpg" data-full="photos/img_10_display.jpg" 
+                data-caption="Fiat Lingotto Factory, Turin" alt="">
+            </div>
+
+            <div class="thumb">
+                <img src="photos/img_9_thumb.jpg" data-full="photos/img_9_display.jpg" 
+                data-caption="Haus zum Falken, Zürich   [Ultramax 400]" alt="">
+            </div>
+
+            <div class="thumb">
+                <img src="photos/img_8_thumb.jpg" data-full="photos/img_8_display.jpg" 
+                alt="">
+            </div>
+
+            <div class="thumb">
+                <img src="photos/img_3_thumb.jpg" data-full="photos/img_3_display.jpg" 
+                data-caption="Nordhavn, Copenhagen" alt="">
+            </div>
+
+            <div class="thumb">
+                <img src="photos/img_5_thumb.jpg" data-full="photos/img_5_display.jpg" 
+                data-caption="Palamidi Fortress, Nafplion" alt="">
+            </div>
+
+            <div class="thumb">
+                <img src="photos/img_2_thumb.jpg" data-full="photos/img_2_display.jpg" 
+                data-caption="Mercedes Benz SSK" alt="">
+            </div>
+        </div>
+        </div>
+
+
+        <div id="lightbox">
+        <span class="close">&times;</span>
+        <div class="lightbox-content">
+            <img id="lightbox-img">
+            <div id="lightbox-caption"></div>
+        </div>
+        </div>
+
+    </main>
     <footer>
-        <p>&copy; 2025 Film & Impression</p>
+       <p>&copy; 2025 Film & Impression</p>
     </footer>
+
+    <script>
+        console.log("Lightbox script loaded");
+    const thumbnails = document.querySelectorAll('.gallery img');
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
+    const lightboxCaption = document.getElementById('lightbox-caption');
+
+
+    document.querySelectorAll(".thumb img").forEach(img => {
+        img.addEventListener("click", () => {
+        lightboxImg.src = img.dataset.full;
+        lightbox.style.display = "flex";
+        document.body.style.overflow = "hidden";
+        });
+    });
+
+
+    function closeLightbox() {
+        lightbox.style.display = "none";
+        lightboxImg.src = "";
+        document.body.style.overflow = "";
+    }
+
+    lightbox.addEventListener("click", closeLightbox);
+
+    document.addEventListener("keydown", e => {
+        if (e.key === "Escape") {
+        closeLightbox();
+        }
+    });
+
+    thumbnails.forEach(img => {
+    img.addEventListener('click', () => {
+        lightboxImg.src = img.dataset.full;
+        lightboxCaption.textContent = img.dataset.caption || '';
+        lightbox.style.display = 'flex';
+    });
+    });
+    </script>
 </body>
-<html>
+</html>
